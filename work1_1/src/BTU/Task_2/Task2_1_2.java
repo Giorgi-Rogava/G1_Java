@@ -1,39 +1,22 @@
 package BTU.Task_2;
 
 import java.io.*;
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-import java.util.Scanner;
+import java.util.*;
 
 public class Task2_1_2 {
 
-    static FileWriter fileWriter;
-
-    static {
-        try {
-            fileWriter = new FileWriter("C:\\Users\\Giorgi\\Desktop\\G1_Java\\B_G1_Java-master\\Week_5\\src\\Task_2\\function.txt", true);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private static FileWriter calculateValue(double number) throws IOException {
+    public static void fileWriter(String fileName, double number) throws IOException {
+        FileWriter fileWriter = new FileWriter(fileName, true);
         double result = number * number + 2 * number + 3;
-        BigDecimal bd = new BigDecimal(result).setScale(2, RoundingMode.HALF_UP);
-
-
-        fileWriter.write(String.valueOf(bd));
+        fileWriter.append(String.valueOf(result).substring(0, 4));
         fileWriter.append("\n");
         fileWriter.close();
-
-        System.out.println("Function Value  - - > " + bd);
-        return fileWriter;
-
     }
 
-    private static void findMaxAndMinNumbers() throws IOException {
 
-        File file = new File("C:\\Users\\Giorgi\\Desktop\\G1_Java\\B_G1_Java-master\\Week_5\\src\\Task_2\\function.txt");
+    public static void findMaxAndMinNumbers(String filePath) throws IOException {
+
+        FileReader file = new FileReader(filePath);
         Scanner scanner = new Scanner(file);
 
 
@@ -59,8 +42,8 @@ public class Task2_1_2 {
 
     public static void main(String[] args) throws IOException {
 
-        calculateValue(1.7982);
-        findMaxAndMinNumbers();
+        fileWriter("D:\\BTU_G1_Java\\G1_Java\\work1_1\\src\\BTU\\Task_2\\function.txt", 1.1039111110);
+        findMaxAndMinNumbers("D:\\BTU_G1_Java\\G1_Java\\work1_1\\src\\BTU\\Task_2\\function.txt");
 
     }
 }
