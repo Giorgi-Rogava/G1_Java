@@ -1,4 +1,4 @@
-package BTU;
+package BTU.task_1;
 
 import java.util.*;
 

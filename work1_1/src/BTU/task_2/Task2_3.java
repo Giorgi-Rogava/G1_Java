@@ -1,4 +1,4 @@
-package BTU.Task_2;
+package BTU.task_2;
 
 import java.util.Scanner;
 import java.util.TreeMap;

@@ -1,11 +1,11 @@
-package BTU.Task_2;
+package BTU.task_2;
 
 import java.io.*;
 import java.util.*;
 
 public class Task2_1_2 {
 
-    public static void fileWriter(String fileName, double number) throws IOException {
+    private static void fileWriter(String fileName, double number) throws IOException {
         FileWriter fileWriter = new FileWriter(fileName, true);
         double result = number * number + 2 * number + 3;
         fileWriter.append(String.valueOf(result).substring(0, 4));
@@ -14,7 +14,7 @@ public class Task2_1_2 {
     }
 
 
-    public static void findMaxAndMinNumbers(String filePath) throws IOException {
+    private static void findMaxAndMinNumbers(String filePath) throws IOException {
 
         FileReader file = new FileReader(filePath);
         Scanner scanner = new Scanner(file);
@@ -22,7 +22,7 @@ public class Task2_1_2 {
 
         double max = Double.parseDouble(scanner.nextLine());
         double min = Double.parseDouble(scanner.nextLine());
-        double compare = 0;
+        double compare;
 
         while (scanner.hasNextLine()) {
             compare = Double.parseDouble(scanner.nextLine());
